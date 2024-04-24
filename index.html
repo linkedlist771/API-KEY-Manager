@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>API Key Manager</title>
+<script src="apiManager.js"></script>
+<style>
+    .container {
+        display: flex;
+        justify-content: space-between; /* 确保两个子元素在水平方向上均匀分布 */
+    }
+    
+    .section {
+        flex: 1; /* 每个部分占用等量空间 */
+        margin: 10px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 给部分内容添加阴影以增加深度感 */
+    }
+    
+    #outputArea {
+        flex: 2; /* 输出区域更宽 */
+    }
+    </style>
+</head>
+
+<div class="container">
+    <div class="section">
+        <h1>API Key Management</h1>
+        <div>
+            <h2>Create API Key</h2>
+            <input type="text" id="expirationSeconds" placeholder="Expiration Seconds">
+            <button onclick="createAPIKey()">Create Key</button>
+        </div>
+        <div>
+            <h2>Validate API Key</h2>
+            <input type="text" id="apiKeyToValidate" placeholder="API Key">
+            <button onclick="validateAPIKey()">Validate Key</button>
+        </div>
+        <div>
+            <h2>Increment Usage</h2>
+            <input type="text" id="apiKeyToIncrement" placeholder="API Key">
+            <button onclick="incrementUsage()">Increment Usage</button>
+        </div>
+        <div>
+            <h2>Get Usage</h2>
+            <input type="text" id="apiKeyToGetUsage" placeholder="API Key">
+            <button onclick="getUsage()">Get Usage</button>
+        </div>
+        <div>
+            <h2>Delete API Key</h2>
+            <input type="text" id="apiKeyToDelete" placeholder="API Key">
+            <button onclick="deleteAPIKey()">Delete Key</button>
+        </div>
+        <div>
+            <h2>List API Keys</h2>
+            <button onclick="listAPIKeys()">List Keys</button>
+        </div>
+    </div>
+    <div class="section" id="outputArea">
+        <h2>Output:</h2>
+        <pre id="results"></pre>
+    </div>
+</div>
+
+</body>
+</html>
